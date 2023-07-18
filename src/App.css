@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  display: flex;
+  border: solid black;
+  height: 100vh;
 }
 
 .App-logo {
@@ -35,4 +38,30 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.home-page {
+  border: solid yellow;
+}
+
+h1 {
+  border: solid blue;
+}
+
+.search-bar {
+  border: solid green;
+}
+
+.employee-page {
+  border: solid brown;
+}
+
+.employee-list {
+  border: solid purple;
+  height: 85%;
+  overflow-y:scroll;
+}
+
+.employee-list-item {
+  border: solid red;
 }
