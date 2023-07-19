@@ -5,43 +5,11 @@
   height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .home-page {
   border: solid yellow;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
@@ -50,18 +18,42 @@ h1 {
 
 .search-bar {
   border: solid green;
+  padding: 1em;
+  margin-block: 1em;
 }
 
 .employee-page {
   border: solid brown;
+  width: 50%;
 }
 
 .employee-list {
   border: solid purple;
-  height: 85%;
-  overflow-y:scroll;
+  overflow-y: scroll;
 }
 
 .employee-list-item {
   border: solid red;
+  pointer-events: painted;
+  margin: 1em;
+  background-color: rgba(0,0,0,9%);
+  max-width: 400px;
+  margin-inline: auto;
+  border-radius: 10px;
+}
+
+.employee-title {
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+#back-button {
+  position: absolute;
+  left:0;
+  align-self: center;
+  margin-inline: 1em;
 }

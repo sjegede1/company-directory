@@ -19,7 +19,7 @@ function App() {
     }
   };
 
-  document.addEventListener("click", selectEmployee);
+  document.addEventListener("click", selectEmployee,{useCapture:true});
 
   return (
     <div className="App">
