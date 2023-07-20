@@ -16,6 +16,12 @@ const AppContextProvider = (props) => {
       user.name.toLowerCase().includes(userName.toLowerCase())
     )[0];
   };
+  const selectEmployee = (event) => {
+    if (event.target.classList.contains("employee-list-item")) {
+      let userName = event.target.firstChild.innerHTML;
+      setCurrentProfile(grabCurrentProfile(userName));
+    }
+  };
 
   return (
     <AppContext.Provider
@@ -23,6 +29,7 @@ const AppContextProvider = (props) => {
         currentProfile,
         setCurrentProfile,
         grabCurrentProfile,
+        selectEmployee,
       }}
     >
       {/* Passes down the value to all children of the provider */}
