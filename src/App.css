@@ -17,7 +17,7 @@ h1 {
 }
 
 .search-bar {
-  border: solid green;
+  /* border: solid green; */
   padding: 1em;
   margin-block: 1em;
 }
@@ -36,14 +36,13 @@ h1 {
   border: solid red;
   pointer-events: painted;
   margin: 1em;
-  background-color: rgba(0,0,0,9%);
+  background-color: rgba(0, 0, 0, 9%);
   max-width: 400px;
   margin-inline: auto;
   border-radius: 10px;
 }
 
 .employee-title {
-
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -51,9 +50,23 @@ h1 {
   width: 100%;
 }
 
+.profile-page-img {
+  height: 150px;
+  border-radius: 50%;
+}
+
+.employee-info {
+  border: solid green;
+}
+
 #back-button {
   position: absolute;
-  left:0;
+  left: 0;
   align-self: center;
   margin-inline: 1em;
+}
+
+.close-employee-page {
+  display: none;
+  width: 100%;
 }

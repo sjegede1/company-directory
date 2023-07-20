@@ -1,3 +1,6 @@
+const randomNumberBetween = (min,max) => {
+  return min + Math.floor(Math.random()*(max-min))
+}
 const users = [
     {
       "id": 1,
@@ -231,6 +234,9 @@ const users = [
     }
   ]
 
+  users.forEach((user,_,arr) => {
+    user['img'] = `https://avatars.githubusercontent.com/u/${randomNumberBetween(1,100)}`
+  })
 
 
 

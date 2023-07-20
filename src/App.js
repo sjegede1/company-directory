@@ -2,14 +2,12 @@ import users from "./models/users";
 import "./App.css";
 import HomePage from "./components/HomePage";
 import EmployeePage from "./components/EmployeePage";
-import { useState } from "react";
+import { useContext } from "react";
+import { AppContext } from "./contexts/app_context";
 
 function App() {
-  const [currentProfile, setCurrentProfile] = useState({});
-
-  const grabCurrentProfile = (userName) => {
-    return users.filter(user => user.name.toLowerCase().includes(userName.toLowerCase()))[0]
-  }
+  const { currentProfile, setCurrentProfile, grabCurrentProfile } =
+    useContext(AppContext);
 
   //Utility function
   const selectEmployee = (event) => {
@@ -19,13 +17,12 @@ function App() {
     }
   };
 
-  document.addEventListener("click", selectEmployee,{useCapture:true});
+  document.addEventListener("click", selectEmployee);
 
   return (
     <div className="App">
-      <HomePage funcs={{setCurrentProfile,grabCurrentProfile}}/>
-
-      <EmployeePage currentProfile={currentProfile} />
+      <HomePage />
+      <EmployeePage />
     </div>
   );
 }

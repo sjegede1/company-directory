@@ -1,31 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../contexts/app_context";
 
-function SearchBar(props) {
-  const { setCurrentProfile, grabCurrentProfile } = props.funcs;
-  // document.addEventListener("click",(event) => {
-  //     if (event.target.id === "submit-search") {
-  //         let searchInfo = document.querySelector("#search-info").
-  //         console.log(searchInfo)
-  //         // setCurrentProfile(grabCurrentProfile(searchInfo))
-  //     }
-  // })
+function SearchBar() {
+  const { setCurrentProfile,grabCurrentProfile } = useContext(AppContext);
 
-  const submitData = () => {
+  const submitData = (event) => {
+    event.preventDefault();
     let searchInfo = document.querySelector("#search-info").value;
-    setCurrentProfile(grabCurrentProfile(searchInfo))
+    setCurrentProfile(grabCurrentProfile(searchInfo));
+    console.log("submit");
   };
   return (
-    <div className="search-bar">
+    <form className="search-bar" onSubmit={submitData}>
       <input
         type="text"
         placeholder="Search.."
         name="search"
         id="search-info"
       />
-      <button type="submit" id="submit-search" onClick={submitData}>
-        Submit
-      </button>
-    </div>
+      <input type="submit" id="submit-search" value="Submit" />
+    </form>
   );
 }
 

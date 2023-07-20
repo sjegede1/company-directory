@@ -1,32 +1,29 @@
 import React from "react";
+import { useContext } from "react";
+import { AppContext } from "../contexts/app_context";
 
-function EmployeePage(props) {
-  if (props.currentProfile === {}) {
+function EmployeePage() {
+  const {currentProfile} = useContext(AppContext);
+
+  if (currentProfile === {}) {
     return <></>;
-  }
-
-  const closeEmployeePage = () => {
-    document.querySelector(".employee-page").classList.toggle("close-employee-page")
-    let backButton = document.querySelector("#back-button");
-    
   }
 
   return (
     <div className="employee-page">
       <h1 className="employee-title">
-        <button id="back-button" onClick={closeEmployeePage}> {">"} </button>
         Employee
       </h1>
 
       <div className="employee-info">
-        <h2>{props.currentProfile.name}</h2>
-        <p>{props.currentProfile.website}</p>
-        <br />
+        <img src={currentProfile.img} alt="" className="profile-page-img" />
+
+        <h2>{currentProfile.name}</h2>
+        <p>{currentProfile.website}</p>
         <h3>Phone</h3>
-        <p>{props.currentProfile.phone}</p>
-        <br />
+        <p>{currentProfile.phone}</p>
         <h3>Email</h3>
-        <p>{props.currentProfile.email}</p>
+        <p>{currentProfile.email}</p>
       </div>
     </div>
   );
